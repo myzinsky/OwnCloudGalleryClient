@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>desktop.qml</file>
+        <file>AdaptiveUI.qml</file>
+    </qresource>
+</RCC>
