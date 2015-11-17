@@ -27,7 +27,7 @@
 #include <iostream>
 #include <QDebug>
 #include <QImage>
-#include <ne_dates.h>
+//#include <ne_dates.h>
 
 int main(int argc, char *argv[])
 {
