@@ -1,4 +1,4 @@
 TEMPLATE = subdirs
 
-SUBDIRS += src 
-SUBDIRS += thirdParty/qwebdav/qwebdavlib 
+SUBDIRS += OwnCloudGalleryClient
+SUBDIRS += thirdParty/qwebdav/qwebdavlib

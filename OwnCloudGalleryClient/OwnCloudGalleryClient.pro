@@ -13,7 +13,8 @@
 #Template options:
 ###################
 TEMPLATE = app
-QT += qml quick widgets
+QT += qml quick widgets xml
+QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.11
 
 ###################
 #Files:
@@ -40,3 +41,5 @@ include(deployment.pri)
 
 HEADERS += webdavinterface.h
 
+INCLUDEPATH += ../thirdParty/qwebdav/qwebdavlib/
+LIBS += -L $$OUT_PWD/../thirdParty/qwebdav/qwebdavlib/ -lqwebdav

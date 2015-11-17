@@ -6,13 +6,17 @@
 #include <string.h>
 #include <fcntl.h>
 
+#include <qwebdav.h>
+#include <qwebdavdirparser.h>
+#include <qwebdavitem.h>
+
 class WebDavInterface
 {
   public:
     WebDavInterface();
 
   private:
-
+    QWebdav w;
 };
 
 #endif // WEBDAVINTERFACE_H
