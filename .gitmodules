@@ -1,0 +1,3 @@
+[submodule "thirdParty/qwebdav"]
+	path = thirdParty/qwebdav
+	url = https://github.com/mjtorn/qwebdavlib.git

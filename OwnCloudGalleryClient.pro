@@ -13,32 +13,43 @@
 #Template options:
 ###################
 TEMPLATE = app
-QT += qml quick widgets
+QT += qml quick widgets network xml
+QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.11
+
+# Enable DEBUG output with qDebug()
+#DEFINES += DEBUG_WEBDAV
 
 ###################
-#Librarys:
+#QWebDav Library:
 ###################
-#LIBS += -L ../OwnCloudGalleryClient/thirdParty/neon/lib -lneon
-#INCLUDEPATH += ./thirdParty/neon/include
-LIBS += -L /Users/florian.fassnacht/Desktop/neon-0.30.1/build/lib -lneon
-INCLUDEPATH += /Users/florian.fassnacht/Desktop/neon-0.30.1/build/include
-# neon needs 10.11 ?
-QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.11
+INCLUDEPATH += thirdParty/qwebdav/qwebdavlib/
+
+HEADERS += thirdParty/qwebdav/qwebdavlib/qwebdav.h
+HEADERS += thirdParty/qwebdav/qwebdavlib/qwebdavitem.h
+HEADERS += thirdParty/qwebdav/qwebdavlib/qwebdavdirparser.h
+HEADERS += thirdParty/qwebdav/qwebdavlib/qnaturalsort.h
+HEADERS += thirdParty/qwebdav/qwebdavlib/.h
+
+SOURCES += thirdParty/qwebdav/qwebdavlib/qwebdav.cpp
+SOURCES += thirdParty/qwebdav/qwebdavlib/qwebdavitem.cpp
+SOURCES += thirdParty/qwebdav/qwebdavlib/qwebdavdirparser.cpp
+SOURCES += thirdParty/qwebdav/qwebdavlib/qnaturalsort.cpp
+
+QMAKE_CXXFLAGS += -Wno-overloaded-virtual
+DEFINES += QWEBDAVITEM_EXTENDED_PROPERTIES
+DEFINES += QWEBDAV_LIBRARY
+
 
 ###################
 #Files:
 ###################
+SOURCES +=  main.cpp \
+            thumbgenerator.cpp \
+            webdavinterface.cpp
 
-SOURCES += main.cpp \
-    thumbgenerator.cpp
-#SOURCES += main.cpp
-#SOURCES += webdavinterface.cpp
-
-HEADERS += \
-    thumbgenerator.h \
-    ocgdefinitions.h
-#HEADERS += webdavinterface.h
-
+HEADERS +=  thumbgenerator.h \
+            ocgdefinitions.h \
+            webdavinterface.h
 
 
 RESOURCES += qml.qrc
@@ -58,6 +69,3 @@ DEFINES += __deploy_desktop
 
 # Default rules for deployment.
 include(deployment.pri)
-
-
-

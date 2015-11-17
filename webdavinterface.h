@@ -6,8 +6,9 @@
 #include <string.h>
 #include <fcntl.h>
 
-#include <neon/ne_request.h>
-#include <neon/ne_auth.h>
+#include <qwebdav.h>
+#include <qwebdavdirparser.h>
+#include <qwebdavitem.h>
 
 class WebDavInterface
 {
@@ -15,12 +16,7 @@ class WebDavInterface
     WebDavInterface();
 
   private:
-
-    static char * url;
-    static char * user;
-    static char * pass;
-
-    static int define_auth(void *userdata, const char *realm, int attempts, char *username, char *password);
+    QWebdav w;
 };
 
 #endif // WEBDAVINTERFACE_H
