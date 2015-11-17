@@ -9,19 +9,30 @@
 // brief: Backend logic and connection.
 // ####################################################################
 
-
+// build dependent includes
 #ifdef __deploy_ios
-    #include <QGuiApplication>
-    #include <QQuickView>
-    #include <QQmlEngine>
+#include <QGuiApplication>
+#include <QQuickView>
+#include <QQmlEngine>
 #endif
 
 #ifdef __deploy_desktop
-    #include <QApplication>
-    #include <QQmlApplicationEngine>
+#include <QApplication>
+#include <QQmlApplicationEngine>
 #endif
+
+//other includes
+#include "thumbgenerator.h"
+#include <QDirIterator>
+#include <iostream>
+#include <QDebug>
+#include <QImage>
+#include <ne_dates.h>
+
 int main(int argc, char *argv[])
 {
+
+    //Setup UI
     QGuiApplication app(argc,argv);
 
 #ifdef __deploy_desktop
@@ -38,7 +49,21 @@ int main(int argc, char *argv[])
     view.show();
 
     view.setFlags(Qt::MaximizeUsingFullscreenGeometryHint);
+
 #endif
+
+    //Other logic
+
+    QDirIterator dir("/Users/florian.fassnacht/Desktop/Dave Matthews Band 2",QDir::Files, QDirIterator::NoIteratorFlags);
+    thumbGenerator tg;
+
+    while(dir.hasNext())
+    {
+        dir.next();
+        tg.getBigThumb(dir.filePath());
+
+    }
+
     return app.exec();
 }
 

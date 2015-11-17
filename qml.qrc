@@ -2,5 +2,10 @@
     <qresource prefix="/">
         <file>desktop.qml</file>
         <file>AdaptiveUI.qml</file>
+        <file>PictureSet.qml</file>
+        <file>Thumb.qml</file>
+        <file>LeftSidebar.qml</file>
+        <file>icons_qml/arrow_128x128.png</file>
+        <file>MainView.qml</file>
     </qresource>
 </RCC>

@@ -18,7 +18,13 @@ QT += qml quick widgets
 ###################
 #Files:
 ###################
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    thumbgenerator.cpp
+
+HEADERS += \
+    thumbgenerator.h \
+    ocgdefinitions.h
+
 RESOURCES += qml.qrc
 
 ####################################################
@@ -36,4 +42,5 @@ DEFINES += __deploy_desktop
 
 # Default rules for deployment.
 include(deployment.pri)
+
 

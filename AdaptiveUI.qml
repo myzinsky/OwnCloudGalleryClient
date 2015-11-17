@@ -18,10 +18,16 @@ Rectangle { //main area
     implicitHeight: 768
     color: "#F2F2F2"
 
+    MainView{
+        width: parent.width
+        height: parent.height - 30
+        anchors.bottom: parent.bottom
+    }
+
     Rectangle { //top menue area
         anchors.top: parent.top
         implicitHeight: 30
         width: parent.width
-        color: "#D5D5D5"
+        color: "#D5D5D5D5"
     }
 }

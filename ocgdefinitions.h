@@ -1,5 +1,12 @@
 #ifndef OCGDEFINITIONS
 #define OCGDEFINITIONS
 
+enum OCG_THUMB_SIZE
+{
+    OCG_BIG_THUMB    = 0,
+    OCG_MEDIUM_THUMB = 1,
+    OCG_SMALL_THUMB  = 2,
+};
+
 #endif // OCGDEFINITIONS
 

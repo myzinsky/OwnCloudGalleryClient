@@ -32,6 +32,10 @@ ApplicationWindow {
                 onTriggered: console.log("Accounts triggered");
             }
             MenuItem {
+                text: qsTr("&Local Libs")
+                onTriggered: console.log("Accounts triggered");
+            }
+            MenuItem {
                 text: qsTr("Exit")
                 onTriggered: Qt.quit();
             }
