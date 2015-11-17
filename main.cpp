@@ -9,6 +9,7 @@
 // brief: Backend logic and connection.
 // ####################################################################
 
+#include<webdavinterface.h>
 
 #ifdef __deploy_ios
     #include <QGuiApplication>
@@ -23,6 +24,8 @@
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc,argv);
+
+    WebDavInterface dav;
 
 #ifdef __deploy_desktop
     QQmlApplicationEngine engine;
