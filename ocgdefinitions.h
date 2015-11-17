@@ -1,0 +1,5 @@
+#ifndef OCGDEFINITIONS
+#define OCGDEFINITIONS
+
+#endif // OCGDEFINITIONS
+
