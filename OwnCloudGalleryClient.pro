@@ -22,7 +22,6 @@ QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.11
 ###################
 #QWebDav Library:
 ###################
-
 INCLUDEPATH += thirdParty/qwebdav/qwebdavlib/
 
 HEADERS += thirdParty/qwebdav/qwebdavlib/qwebdav.h
@@ -40,14 +39,18 @@ QMAKE_CXXFLAGS += -Wno-overloaded-virtual
 DEFINES += QWEBDAVITEM_EXTENDED_PROPERTIES
 DEFINES += QWEBDAV_LIBRARY
 
+
 ###################
 #Files:
 ###################
+SOURCES +=  main.cpp \
+            thumbgenerator.cpp \
+            webdavinterface.cpp
 
-HEADERS += webdavinterface.h
+HEADERS +=  thumbgenerator.h \
+            ocgdefinitions.h \
+            webdavinterface.h
 
-SOURCES += main.cpp
-SOURCES += webdavinterface.cpp
 
 RESOURCES += qml.qrc
 
