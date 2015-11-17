@@ -13,14 +13,42 @@
 #Template options:
 ###################
 TEMPLATE = app
-QT += qml quick widgets xml
+QT += qml quick widgets network xml
 QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.11
+
+# Enable DEBUG output with qDebug()
+#DEFINES += DEBUG_WEBDAV
+
+###################
+#QWebDav Library:
+###################
+
+INCLUDEPATH += thirdParty/qwebdav/qwebdavlib/
+
+HEADERS += thirdParty/qwebdav/qwebdavlib/qwebdav.h
+HEADERS += thirdParty/qwebdav/qwebdavlib/qwebdavitem.h
+HEADERS += thirdParty/qwebdav/qwebdavlib/qwebdavdirparser.h
+HEADERS += thirdParty/qwebdav/qwebdavlib/qnaturalsort.h
+HEADERS += thirdParty/qwebdav/qwebdavlib/.h
+
+SOURCES += thirdParty/qwebdav/qwebdavlib/qwebdav.cpp
+SOURCES += thirdParty/qwebdav/qwebdavlib/qwebdavitem.cpp
+SOURCES += thirdParty/qwebdav/qwebdavlib/qwebdavdirparser.cpp
+SOURCES += thirdParty/qwebdav/qwebdavlib/qnaturalsort.cpp
+
+QMAKE_CXXFLAGS += -Wno-overloaded-virtual
+DEFINES += QWEBDAVITEM_EXTENDED_PROPERTIES
+DEFINES += QWEBDAV_LIBRARY
 
 ###################
 #Files:
 ###################
+
+HEADERS += webdavinterface.h
+
 SOURCES += main.cpp
 SOURCES += webdavinterface.cpp
+
 RESOURCES += qml.qrc
 
 ####################################################
@@ -38,8 +66,3 @@ DEFINES += __deploy_desktop
 
 # Default rules for deployment.
 include(deployment.pri)
-
-HEADERS += webdavinterface.h
-
-INCLUDEPATH += ../thirdParty/qwebdav/qwebdavlib/
-LIBS += -L $$OUT_PWD/../thirdParty/qwebdav/qwebdavlib/ -lqwebdav
